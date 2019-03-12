@@ -12,12 +12,16 @@ var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.pokemons = null;
         this.titlePage = "Pokémons";
+        this.value = '';
     }
     AppComponent.prototype.ngOnInit = function () {
         this.pokemons = mock_pokemons_1.POKEMONS;
     };
     AppComponent.prototype.onClick = function () {
         console.log("click !");
+    };
+    AppComponent.prototype.onKey = function (event) {
+        this.value = 'Bonjour ' + event.target.value;
     };
     AppComponent.prototype.selectPokemon = function (pokemon) {
         console.log('Vous avez selectionné ' + pokemon.name);
