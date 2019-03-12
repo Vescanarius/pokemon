@@ -13,7 +13,6 @@ var AppComponent = /** @class */ (function () {
         this.pokemons = null;
         this.titlePage = "Pokémons";
         this.values = '';
-        this.age = 15;
     }
     AppComponent.prototype.ngOnInit = function () {
         this.pokemons = mock_pokemons_1.POKEMONS;
