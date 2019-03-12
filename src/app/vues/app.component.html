@@ -1,3 +1,4 @@
 <h1>{{titlePage}}</h1>
-<input #box (blur.enter)="values=box.value" (blur)="values=box.value">
-<p>{{values}}</p>
+
+
+<p *ngIf="age > 18">Ceci ets un  message destiné aux personnes majeures.</p>
