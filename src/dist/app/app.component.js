@@ -7,15 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-//import {POKEMONS} from './mock-pokemons';
+var mock_pokemons_1 = require("./mock-pokemons");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.pokemons = null;
+        this.titlePage = "Pokémons";
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.pokemons = mock_pokemons_1.POKEMONS;
+    };
+    AppComponent.prototype.onClick = function () {
+        console.log("click !");
+    };
+    AppComponent.prototype.selectPokemon = function (pokemon) {
+        console.log('Vous avez selectionné ' + pokemon.name);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'pokemon-app',
-            templateUrl: "./app/app.component.html",
+            templateUrl: './app/vues/app.component.html'
         })
     ], AppComponent);
     return AppComponent;
