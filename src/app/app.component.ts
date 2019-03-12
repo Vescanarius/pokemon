@@ -10,19 +10,12 @@ export class AppComponent implements OnInit {
 
   pokemons: Pokemon[] = null;
   private titlePage:string="Pokémons";
-  private value:string = '';
+  values='';
 
   ngOnInit() {
     this.pokemons = POKEMONS;
   }
 
-  onClick(){
-    console.log("click !");
-  }
-
-  onKey(value:string){
-    this.value='Bonjour ' + value;
-  }
 
   selectPokemon(pokemon: Pokemon) {
     console.log('Vous avez selectionné ' + pokemon.name);

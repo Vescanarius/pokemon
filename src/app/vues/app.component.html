@@ -1,11 +1,3 @@
 <h1>{{titlePage}}</h1>
-<ul>
-  <li>ezfg</li>
-  <li>ezfg</li>
-  <li>ezfg</li>
-</ul>
-
-<button (click)="onClick();">Cliquez ici !</button>
-
-<input #box (keyup)="onKey(box.value)">
-  <p>{{value}}</p>
+<input #box (keyup.enter)="values=box.value">
+<p>{{values}}</p>
