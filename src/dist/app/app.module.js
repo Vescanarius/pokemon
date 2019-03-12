@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
-var border_card_directive_1 = require("./border-card-directive");
+var border_card_directive_1 = require("./border-card.directive");
 //import {PokemonTypeColorPipe} from './pokemon-type-color.pipe'
 var AppModule = /** @class */ (function () {
     function AppModule() {

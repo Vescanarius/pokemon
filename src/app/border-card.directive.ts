@@ -4,20 +4,25 @@
 		selector: '[pkmnBorderCard]'
 	})
 	export class BorderCardDirective {
+
+		private initialColor:string='#F5F5F5';
+		private defaultColor:string='red';
+		private defaultHeight:number=300;
+
 		constructor(private el: ElementRef) {
-			this.setBorder('#f5f5f5');
-			this.setHeight(180);
+			this.setBorder(this.initialColor);
+			this.setHeight(this.defaultHeight);
 		}
 
 	@HostListener('mouseenter') onMouseEnter(){
-		this.setBorder(this.borderColor || '#009688')
+		this.setBorder(this.borderColor || this.defaultColor)
 	}
 	@HostListener('mouseleave') onMouseleave(){
-		this.setBorder('#f5f5f5')
+		this.setBorder(this.initialColor)
 	}
 
-	@Input('pkmnBorderCard') borderColor:string; //alias
-//	@Input() pkmnBorderCard:string: // sans alias
+		@Input('pkmnBorderCard') borderColor:string;
+
 
 		private setBorder(color: string) {
 			let border = 'solid 4px ' + color;
