@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   }
 
   onKey(event:KeyboardEvent){
-    this.value='Bonjour ' + (<HTMLIputElement>event.target).value;
+    this.value='Bonjour ' + (<HTMLInputElement>event.target).value;
   }
 
   selectPokemon(pokemon: Pokemon) {
