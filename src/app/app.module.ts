@@ -9,7 +9,7 @@ import {PageNotFoundComponent} from './page-not-found.component';
 @NgModule({
 	imports: [
 	  BrowserModule,
-		PokemonsModule
+		PokemonsModule,
 	  AppRoutingModule,
 	],
 	declarations: [
