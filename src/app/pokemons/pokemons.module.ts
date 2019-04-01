@@ -14,6 +14,7 @@ import { PokemonFormComponent } from './pokemon-form.component';
 
 import { PokemonSearchComponent } from './search-pokemon.component';
 import { LoaderComponent } from '../loader.component';
+import { AuthGuard } from '../auth-guard.service';
 
 
 @NgModule({
@@ -32,10 +33,10 @@ import { LoaderComponent } from '../loader.component';
 		PokemonFormComponent,
 		PokemonSearchComponent,
 		LoaderComponent,
-
 	],
 	providers: [
 		PokemonsService,
+		AuthGuard
 	]
 })
 export class PokemonsModule { }
