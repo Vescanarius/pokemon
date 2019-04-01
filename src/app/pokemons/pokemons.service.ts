@@ -27,6 +27,16 @@ export class PokemonsService {
             return of (result as T);
         }
     }
+
+    searchPokemons(term:string):Observable<Pokemon[]> {
+      if(!term.trim()){
+        return of([]);
+      }
+      return this.http.get<Pokemon[]>(`${this.pokemonsUrl}/?name=${term}`).pipe(
+          tap(_ => this.log(`found pokemon matching "${term}"`)),
+          catchError(this.handleError<pokemon>('searchPokemons',[]))
+      );
+    }
     deletePokemon(pokemon:Pokemon):Observable<Pokemon>{
       const url = `${this.pokemonsUrl}/${pokemon.id}`;
       const httpOptions ={
