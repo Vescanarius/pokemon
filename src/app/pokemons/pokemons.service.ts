@@ -27,6 +27,16 @@ export class PokemonsService {
             return of (result as T);
         }
     }
+    deletePokemon(pokemon:Pokemon):Observable<Pokemon>{
+      const url = `${this.pokemonsUrl}/${pokemon.id}`;
+      const httpOptions ={
+          hearders: new HttpHeaders({'Content-Type': 'application/json'})
+      };
+      return this.http.delete<Pokemon>(url, httpOptions).pipe(
+          tap(_ => this.log(`delete pokemon id=${pokemon.id}`)),
+          catchError(this.handleError<any>('deletePokemon'))
+      );
+    }
     updatePokemon(pokemon:Pokemon):Observable<pokemon> {
         const httpOptions ={
             hearders: new HttpHeaders({'Content-Type': 'application/json'})
