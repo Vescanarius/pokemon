@@ -27,6 +27,15 @@ export class PokemonsService {
             return of (result as T);
         }
     }
+    updatePokemon(pokemon:Pokemon):Observable<pokemon> {
+        const httpOptions ={
+            hearders: new HttpHeaders({'Content-Type': 'application/json'})
+        };
+        return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe(
+            tap(_ => this.log(`updated pokemon id=${pokemon.id}`)),
+            catchError(this.handleError<any>('updatedpokemon'))
+        )
+    }
 
     // Retourne tous les pokémons
     getPokemons(): Observable<Pokemon[]> {
@@ -38,13 +47,13 @@ export class PokemonsService {
 
     // Retourne le pokémon avec l'identifiant passé en paramètre
     getPokemon(id: number): Observable<Pokemon> {
-        const url = this.pokemonsUrl+'/'+id; //fonctionne
-        const url = '${this.pokemonsUrl}/${id}'; // fonctionne pas
+        //const url = this.pokemonsUrl+'/'+id; //fonctionne
+        const url = `${this.pokemonsUrl}/${id}`; // fonctionne pas
         console.log(url);
 
       return this.http.get<Pokemon>(url).pipe(
           tap(_ => this.log ('fetched pokemon id=${id}')),
-          catchError(this.handleError<Pokemon>('getPokemon id=${id}'))
+          catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
       );
     }
     getPokemonTypes():string[]{
