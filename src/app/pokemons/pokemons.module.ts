@@ -13,7 +13,7 @@ import { EditPokemonComponent } from './edit-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form.component';
 
 import { PokemonSearchComponent } from './search-pokemon.component';
-
+import { LoaderComponent } from '../loader.component';
 
 
 @NgModule({
@@ -31,6 +31,8 @@ import { PokemonSearchComponent } from './search-pokemon.component';
 		EditPokemonComponent,
 		PokemonFormComponent,
 		PokemonSearchComponent,
+		LoaderComponent,
+
 	],
 	providers: [
 		PokemonsService,
